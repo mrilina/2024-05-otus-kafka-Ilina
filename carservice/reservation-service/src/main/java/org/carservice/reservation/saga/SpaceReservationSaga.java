@@ -43,12 +43,6 @@ public final class SpaceReservationSaga extends Saga {
         advance();
     }
 
-    /**
-     * handle Payment Event
-     *
-     * @param eventId - ensure one-time handling, consumed skip
-     * @param payload
-     */
     public void onPaymentEvent(UUID eventId, PaymentEvent payload) {
         ensureProcessed(eventId, () -> {
             onStepEvent(PAYMENT.topic, payload.status().toSagaStepStatus());

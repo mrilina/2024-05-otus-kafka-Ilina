@@ -42,7 +42,7 @@ public class BookSpaceE2ETest extends TestContainersSetup {
 
     @BeforeEach
     void setUp(@Autowired TestRestTemplate restTemplate) throws IOException {
-        registerTestConnector(restTemplate); // FIXME: think of a better way
+        registerTestConnector(restTemplate);
     }
 
     @Test

@@ -15,9 +15,6 @@ import java.util.UUID;
 import static java.util.Objects.requireNonNull;
 import static lombok.AccessLevel.PRIVATE;
 
-/**
- * Outbox Event to store domain events in a persistent store.
- */
 @Entity
 @Table(name = "outboxevent")
 @NoArgsConstructor(access = PRIVATE)

@@ -16,10 +16,6 @@ class OutboxEventDispatcher {
     private final EntityManager entityManager;
     private final boolean removeAfterInsert;
 
-    OutboxEventDispatcher(EntityManager entityManager) {
-        this(entityManager, true);
-    }
-
     OutboxEventDispatcher(EntityManager entityManager, boolean removeAfterInsert) {
         this.entityManager = entityManager;
         this.removeAfterInsert = removeAfterInsert;
@@ -30,13 +26,8 @@ class OutboxEventDispatcher {
     public void on(OutboxEvent<?, ?> event) {
         try (var session = entityManager.unwrap(Session.class)) {
             logger.info("An exported event was found for type {}", event.type());
-
-            // Unwrap to Hibernate session and save
             var outbox = new Outbox(event);
             session.persist(outbox);
-
-            // Remove entity if the configuration deems doing so, leaving useful
-            // for debugging
             if (removeAfterInsert) {
                 session.remove(outbox);
             }

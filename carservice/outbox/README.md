@@ -1,1 +1,0 @@
-# Outbox Events module support

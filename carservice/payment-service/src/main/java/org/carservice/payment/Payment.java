@@ -1,8 +1,3 @@
-/*
- * Copyright Debezium Authors.
- *
- * Licensed under the Apache Software License version 2.0, available at http://www.apache.org/licenses/LICENSE-2.0
- */
 package org.carservice.payment;
 
 import jakarta.persistence.*;
@@ -15,7 +10,7 @@ import static lombok.AccessLevel.PRIVATE;
 
 @Entity
 @Table(name = "payment")
-@NoArgsConstructor(access = PRIVATE, force = true) // JPA compliant
+@NoArgsConstructor(access = PRIVATE, force = true)
 @ToString
 public class Payment {
 
@@ -38,7 +33,7 @@ public class Payment {
 
         PaymentStatus status;
         if (type.isRequest()) {
-            if (creditCardNo.endsWith("9999")) { //FIXME: demo purpose
+            if (creditCardNo.endsWith("9999")) {
                 status = PaymentStatus.FAILED;
             } else {
                 status = PaymentStatus.REQUESTED;

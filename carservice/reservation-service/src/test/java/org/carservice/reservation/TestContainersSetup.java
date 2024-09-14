@@ -65,7 +65,6 @@ public abstract class TestContainersSetup {
     protected static DebeziumContainer connector = new DebeziumContainer("debezium/connect:2.4.1.Final")
             .withNetwork(network)
             .withKafka(kafka)
-//            .withLogConsumer(new Slf4jLogConsumer(LOGGER))
             .dependsOn(kafka);
 
     @DynamicPropertySource

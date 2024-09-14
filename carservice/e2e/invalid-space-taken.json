@@ -1,8 +1,8 @@
 {
   "parkingId": 1,
   "spaceId": 2,
-  "startDate": "2023-12-16",
-  "endDate": "2023-12-17",
+  "startDate": "2024-08-16",
+  "endDate": "2024-08-17",
   "guestId": 10000001,
   "paymentDue": 1702632793441,
   "creditCardNo": "************7999"

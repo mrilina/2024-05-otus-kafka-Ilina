@@ -1,6 +1,5 @@
 package org.carservice.reservation;
 
-
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
